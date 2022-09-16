@@ -1,0 +1,3 @@
+# Ignore file auth dan store local storage untuk menyimpan info login
+baileys_auth_info/
+baileys_store_multi.json
