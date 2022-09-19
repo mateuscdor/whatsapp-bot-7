@@ -1,7 +1,20 @@
 {
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "@adiwajshing/baileys": "^4.4.0",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "@hapi/boom": "^10.0.0",
-    "qrcode-terminal": "^0.12.0"
+    "@types/node": "*",
+    "qrcode-terminal": "^0.12.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
   }
 }
