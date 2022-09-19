@@ -14,7 +14,6 @@ command.on(['hey'], ['test'], (mess) => {
             value: '!~test'
         },
         {
-            title: 'def',
             listTitle: 'eeffwf',
             value: '!~test'
         }
@@ -24,5 +23,12 @@ command.on(['hey'], ['test'], (mess) => {
 })
 
 command.on(['test'], ['test'], (mess) => {
-    return client.reply(mess, 'hello world')
+    return client.sendButton(mess, {
+        text: "Oy"
+    }, [
+        {
+            reply: "halo",
+            value: "!~test"
+        }
+    ])
 })
