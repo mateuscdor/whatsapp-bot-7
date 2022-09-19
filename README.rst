@@ -1,4 +1,4 @@
-WhatsApp Bot
+Soruka Tech Bot
 ==========
 
 Simple, fast, and developable WhatsApp Bot for Bang Wafa's Project written in TypeScript.
