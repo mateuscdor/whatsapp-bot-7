@@ -1,4 +1,4 @@
 node_modules
 src/database/session
 .vscode
-lib/**/*.js*
+lib/**/*.*
