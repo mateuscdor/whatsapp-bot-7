@@ -9,7 +9,7 @@ specifiers:
   fastest-levenshtein: ^1.0.16
   file-type: 16.5.3
   form-data: ^4.0.0
-  link-preview-js: ^3.0.4
+  link-preview-js: ^2.1.13
   lodash: ^4.17.21
   node-cache: ^5.1.2
   pino: ^8.5.0
@@ -18,14 +18,14 @@ specifiers:
   typescript: ^4.8.3
 
 dependencies:
-  '@adiwajshing/baileys': github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_2j6baxy2ydhri4rxp6tfojggau
+  '@adiwajshing/baileys': github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_nvpv5kbty5jk6strl4ranx5vsq
   '@hapi/boom': 10.0.0
   '@types/node': 18.7.18
   axios: 0.26.1
   fastest-levenshtein: 1.0.16
   file-type: 16.5.3
   form-data: 4.0.0
-  link-preview-js: 3.0.4
+  link-preview-js: 2.1.19
   lodash: 4.17.21
   node-cache: 5.1.2
   pino: 8.5.0
@@ -426,8 +426,8 @@ packages:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
     dev: false
 
-  /link-preview-js/3.0.4:
-    resolution: {integrity: sha512-xsuxMigAZd4xmj6BIwMNuQjjpJdh0DWeIo1NXQgaoWSi9Z/dzz/Kxy6vzzsUonFlMTPJ1i0EC8aeOg/xrOMidg==}
+  /link-preview-js/2.1.19:
+    resolution: {integrity: sha512-ZXiacDuzpNLY/Xx7R3njpI07K2VWZqe/kANwc4RdRPTc+uAkBHW3hGHTeN7upnyrwV7hfwR79CjRXo0fvfGH5A==}
     dependencies:
       abort-controller: 3.0.0
       cheerio: 1.0.0-rc.11
@@ -855,7 +855,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_2j6baxy2ydhri4rxp6tfojggau:
+  github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_nvpv5kbty5jk6strl4ranx5vsq:
     resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/d73585ede95a84682b4a9bd79c11c2471d283791}
     id: github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791
     name: '@adiwajshing/baileys'
@@ -884,7 +884,7 @@ packages:
       axios: 0.24.0
       futoin-hkdf: 1.5.1
       libsignal: github.com/adiwajshing/libsignal-node/11dbd962ea108187c79a7c46fe4d6f790e23da97
-      link-preview-js: 3.0.4
+      link-preview-js: 2.1.19
       music-metadata: 7.13.0
       node-cache: 5.1.2
       pino: 7.11.0
