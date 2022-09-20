@@ -1,28 +1,26 @@
-command.on(['hey'], ['test'], (mess) => {
+command.on(['hey'], ['command'], (mess) => {
     return client.sendButton(mess, {
-        text: "This is a list",
-        footer: "nice footer, link: https://google.com",
-        buttonText: "klik saya"
+        text: "Selamat datang di Jasa Websiteku. Jasa pembuatan website dengan support terbaik.",
+        buttonText: "Daftar Layanan"
     }, [
         {
-            listTitle: 'ffwf',
-            value: '!~test'
+            listTitle: 'Website Desa',
+            value: '!~website_desa'
         },
         {
-            title: 'halo ini title',
-            listTitle: 'pilih ini',
-            value: '!~test'
+            listTitle: 'Website Berita',
+            value: '!~website_berita'
         },
         {
-            listTitle: 'eeffwf',
-            value: '!~test'
+            listTitle: 'Website Pendidikan',
+            value: '!~website_pendidikan'
         }
     ])
 }, {
     prefix: false
 })
 
-command.on(['test'], ['test'], (mess) => {
+command.on(['website_desa'], ['command'], (mess) => {
     return client.sendButton(mess, {
         text: "Oy"
     }, [
