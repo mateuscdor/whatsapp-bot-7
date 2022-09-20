@@ -6,6 +6,7 @@ specifiers:
   '@types/lodash': ^4.14.185
   '@types/node': '*'
   axios: ^0.26.1
+  dotenv: ^16.0.2
   fastest-levenshtein: ^1.0.16
   file-type: 16.5.3
   form-data: ^4.0.0
@@ -18,10 +19,11 @@ specifiers:
   typescript: ^4.8.3
 
 dependencies:
-  '@adiwajshing/baileys': github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_nvpv5kbty5jk6strl4ranx5vsq
+  '@adiwajshing/baileys': github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc_nvpv5kbty5jk6strl4ranx5vsq
   '@hapi/boom': 10.0.0
   '@types/node': 18.7.18
   axios: 0.26.1
+  dotenv: 16.0.2
   fastest-levenshtein: 1.0.16
   file-type: 16.5.3
   form-data: 4.0.0
@@ -330,6 +332,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: false
+
+  /dotenv/16.0.2:
+    resolution: {integrity: sha512-JvpYKUmzQhYoIFgK2MOnF3bciIZoItIIoryihy0rIA+H4Jy0FmgyKYAHCTN98P5ybGSJcIFbh6QKeJdtZd1qhA==}
+    engines: {node: '>=12'}
     dev: false
 
   /duplexify/4.1.2:
@@ -855,11 +862,11 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791_nvpv5kbty5jk6strl4ranx5vsq:
-    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/d73585ede95a84682b4a9bd79c11c2471d283791}
-    id: github.com/adiwajshing/baileys/d73585ede95a84682b4a9bd79c11c2471d283791
+  github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc_nvpv5kbty5jk6strl4ranx5vsq:
+    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/ae3ac78dc3e02daba9b126157914ec5aa768c3dc}
+    id: github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc
     name: '@adiwajshing/baileys'
-    version: 4.5.0
+    version: 5.0.0
     prepare: true
     requiresBuild: true
     peerDependencies:
