@@ -135,7 +135,6 @@ export default class Client {
                                 rows,
                                 title: (bc as any).title,
                             });
-                            console.log(buttonData)
                             rows = []
                         }
                         break
@@ -163,8 +162,90 @@ export default class Client {
         }
     }
 
-    public reply = async (mess: Metadata, text: string): Promise<baileys.proto.WebMessageInfo | undefined> =>
-        this.sendMessage(mess, { text: utilities.format(text).trim(), quoted: mess });
+    public reply = async (mess: Metadata, content: Content | string, buttons: ButtonConfig[]=[]): Promise<baileys.proto.WebMessageInfo | undefined> => {
+
+    try {
+        let parsedType = ''
+
+        function parseButton(type: string, object: ButtonConfig) {
+            if ('listTitle' in object) {
+                parsedType = 'sections'
+                return {
+                    ...object,
+                    title: object.listTitle ?? undefined,
+                    rowId: object.value ?? undefined
+                }
+            } else if ('reply' in object) {
+                parsedType = 'buttons'
+                return {
+                    buttonText: { displayText: object.reply },
+                    buttonId: object.value
+                }
+            } else {
+                parsedType = 'templateButtons'
+                return {
+                    [type + 'Button']: {
+                        displayText: object[type as keyof typeof object],
+                        ['call' in object ? 'phoneNumber' : type]: object.value ?? undefined
+                    }
+                }
+            }
+        }
+
+        let buttonData: baileys.proto.IHydratedTemplateButton[] | baileys.proto.Message.ListMessage.ISection[] | baileys.proto.Message.ButtonsMessage.IButton[] = [];
+
+        let rows: baileys.proto.Message.ListMessage.IRow[] = [];
+        for (const bc of buttons) {
+            const type = Object.keys(bc)
+                .find((v) => v !== 'value')
+                ?.toLowerCase();
+            const parse = type ? parseButton(type, bc) : undefined;
+
+            switch (parsedType) {
+                case 'sections':
+                    rows.push(parse as baileys.proto.Message.ListMessage.IRow);
+                    if ('title' in bc) {
+                        buttonData.push({
+                            rows,
+                            title: (bc as any).title,
+                        });
+                        rows = []
+                    }
+                    break
+                case 'buttons':
+                case 'templateButtons':
+                    buttonData.push(parse as any)
+                    break
+            }
+        }
+        
+        if (!(buttons.filter((o) => {return o.hasOwnProperty("title")}).length > 0) && parsedType === 'sections') {
+            buttonData.push({
+                rows
+            })
+        }
+        if (rows.some(v => !v?.title)) throw new Error('Please atleast put 1 title when you want to send list message')
+        if (typeof content === 'object') {
+            return this.sendMessage(mess, {
+                ...content,
+                [parsedType]: buttonData,
+                // TODO: Ketika bug button template di fix hapus ini
+                viewOnce: parsedType === 'templateButtons' ? true : false,
+                quoted: mess
+            });
+        } else {
+            return this.sendMessage(mess, {
+                text: content,
+                [parsedType]: buttonData,
+                // TODO: Ketika bug button template di fix hapus ini
+                viewOnce: parsedType === 'templateButtons' ? true : false,
+                quoted: mess
+            });
+        }
+    } catch (err) {
+        throw err;
+    }
+    }
 
     public async downloadContent(mess: Metadata, path?: string) {
         try {
