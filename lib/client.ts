@@ -35,7 +35,7 @@ export default class Client {
                 auth: (await Client.instance.auth).state,
                 printQRInTerminal: true,
                 version: (await baileys.fetchLatestBaileysVersion()).version,
-                browser: ['cilok-bot', 'Desktop', '3.1.0'],
+                browser: ['Soruka Tech Bot', 'Desktop', '3.1.0'],
                 logger: P({
                     level: 'info',
                 }),
