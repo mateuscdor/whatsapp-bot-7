@@ -6,6 +6,8 @@ import * as fs from 'fs'
 import * as utilities from './utilities'
 import commandHandler from './command';
 import path from 'path';
+import * as dotenv from 'dotenv'
+dotenv.config({path: './src/.env'});
 
 (async function () {
     try {
