@@ -34,7 +34,7 @@ export default class Client {
             Client.socket = makeWASocket({
                 auth: (await Client.instance.auth).state,
                 printQRInTerminal: true,
-                version: (await baileys.fetchLatestBaileysVersion()).version,
+                version: (await baileys.fetchLatestBaileysVersion({})).version,
                 browser: ['Soruka Tech Bot', 'Desktop', '3.1.0'],
                 logger: P({
                     level: 'info',
@@ -135,6 +135,7 @@ export default class Client {
                                 rows,
                                 title: (bc as any).title,
                             });
+                            console.log(buttonData)
                             rows = []
                         }
                         break
@@ -143,6 +144,12 @@ export default class Client {
                         buttonData.push(parse as any)
                         break
                 }
+            }
+            
+            if (!(buttons.filter((o) => {return o.hasOwnProperty("title")}).length > 0) && parsedType === 'sections') {
+                buttonData.push({
+                    rows
+                })
             }
             if (rows.some(v => !v?.title)) throw new Error('Please atleast put 1 title when you want to send list message')
             return this.sendMessage(mess, {
