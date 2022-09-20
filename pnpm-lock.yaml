@@ -8,7 +8,7 @@ specifiers:
   axios: ^0.26.1
   dotenv: ^16.0.2
   fastest-levenshtein: ^1.0.16
-  file-type: 16.5.3
+  file-type: 16.5.4
   form-data: ^4.0.0
   link-preview-js: ^2.1.13
   lodash: ^4.17.21
@@ -19,13 +19,12 @@ specifiers:
   typescript: ^4.8.3
 
 dependencies:
-  '@adiwajshing/baileys': github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc_nvpv5kbty5jk6strl4ranx5vsq
+  '@adiwajshing/baileys': github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b_nvpv5kbty5jk6strl4ranx5vsq
   '@hapi/boom': 10.0.0
-  '@types/node': 18.7.18
   axios: 0.26.1
   dotenv: 16.0.2
   fastest-levenshtein: 1.0.16
-  file-type: 16.5.3
+  file-type: 16.5.4
   form-data: 4.0.0
   link-preview-js: 2.1.19
   lodash: 4.17.21
@@ -35,6 +34,7 @@ dependencies:
 
 devDependencies:
   '@types/lodash': 4.14.185
+  '@types/node': 18.7.18
   ts-node: 10.9.1_bidgzm5cq2du6gnjtweqqjrrn4
   typescript: 4.8.3
 
@@ -372,15 +372,6 @@ packages:
   /fastest-levenshtein/1.0.16:
     resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
     engines: {node: '>= 4.9.1'}
-    dev: false
-
-  /file-type/16.5.3:
-    resolution: {integrity: sha512-uVsl7iFhHSOY4bEONLlTK47iAHtNsFHWP5YE4xJfZ4rnX7S1Q3wce09XgqSC7E/xh8Ncv/be1lNoyprlUH/x6A==}
-    engines: {node: '>=10'}
-    dependencies:
-      readable-web-to-node-stream: 3.0.2
-      strtok3: 6.3.0
-      token-types: 4.2.1
     dev: false
 
   /file-type/16.5.4:
@@ -862,9 +853,9 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc_nvpv5kbty5jk6strl4ranx5vsq:
-    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/ae3ac78dc3e02daba9b126157914ec5aa768c3dc}
-    id: github.com/adiwajshing/baileys/ae3ac78dc3e02daba9b126157914ec5aa768c3dc
+  github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b_nvpv5kbty5jk6strl4ranx5vsq:
+    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/f8fd5ec0080e9f53288b96b0073212e53a40f57b}
+    id: github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b
     name: '@adiwajshing/baileys'
     version: 5.0.0
     prepare: true
