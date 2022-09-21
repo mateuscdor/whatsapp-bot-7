@@ -78,7 +78,6 @@ export default class Client {
                     [mediaType]: bufferData.buffer,
                 };
             }
-
             return this.socket.sendMessage(
                 typeof mess === 'object' ? mess.from! : mess,
                 property as baileys.AnyMessageContent,
@@ -144,8 +143,8 @@ export default class Client {
                         break
                 }
             }
-            
-            if (!(buttons.filter((o) => {return o.hasOwnProperty("title")}).length > 0) && parsedType === 'sections') {
+
+            if (!(buttons.filter((o) => { return o.hasOwnProperty("title") }).length > 0) && parsedType === 'sections') {
                 buttonData.push({
                     rows
                 })
@@ -163,10 +162,11 @@ export default class Client {
     }
 
     public reply = async (mess: Metadata, content: Content | string, buttons?: ButtonConfig[]): Promise<baileys.proto.WebMessageInfo | undefined> => {
+        if (!content) throw new Error('Bang, kosong :(')
         if (typeof content === 'object' && buttons) {
-            return this.sendButton(mess, {...content, quoted: mess }, buttons)
+            return this.sendButton(mess, { ...content, quoted: mess }, buttons)
         } else {
-            return this.sendMessage(mess, { text: content, quoted: mess })
+            return this.sendMessage(mess, { text: (content as string), quoted: mess })
         }
     }
 
