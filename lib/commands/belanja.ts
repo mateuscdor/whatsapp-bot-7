@@ -1,24 +1,10 @@
 import { ButtonConfig } from "../types";
+import daftarBarang from "../../src/daftarBarang.json"
 
 type Barang = {
   nama: string,
   harga: number
 }
-
-const daftarBarang = [
-  {
-    nama: "aaa",
-    harga: 15000
-  },
-  {
-    nama: "bbb",
-    harga: 12000
-  },
-  {
-    nama: "ccc",
-    harga: 5000
-  },
-]
 
 let keranjang: Array<Barang> = []
 
@@ -31,19 +17,20 @@ function getBarang()  {
     return button
 }
 
-command.on([/\w*/], [''], (mess) => {
-  return client.sendButton(mess, {text: "test", buttonText: "list"}, getBarang())
-}, {prefix: false})
+
+// command.on([/\w*/], ['test'], (mess) => {
+//   return client.sendButton(mess, {text: "test", buttonText: "list"}, getBarang())
+// }, {prefix: false})
 
 daftarBarang.forEach(({nama, harga}) => {
-  command.on([`${nama}`], [''], (mess) => {
+  command.on([`${nama}`], ['nama_barang'], (mess) => {
     keranjang.push({nama, harga})
     return client.sendButton(mess, {text: `Terimakasih anda sudah membeli ${nama} dengan harga ${harga}`}, [{reply: 'Lihat Keranjang', value: '!~lihatkeranjang'}])
   })
 })
 
-command.on(['lihatkeranjang'], [''], (mess) => {
-  let pesan = 'Anda membeli\n-----\n';
+command.on(['lihatkeranjang'], ['test'], (mess) => {
+  let pesan = `Anda membeli\n${'-'.repeat(10)}\n`;
   let total = 0;
   keranjang.forEach(({nama, harga}) => {
     pesan += `Nama Barang: ${nama}\nHarga: ${harga}\n`
@@ -53,6 +40,6 @@ command.on(['lihatkeranjang'], [''], (mess) => {
   return client.sendMessage(mess, {text: pesan})
 })
 
-command.on(['hapuskeranjang'], [''], () => {
+command.on(['hapuskeranjang'], ['test'], () => {
   keranjang = [];
 })
