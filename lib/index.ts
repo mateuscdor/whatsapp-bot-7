@@ -7,10 +7,18 @@ import * as utilities from './utilities'
 import commandHandler from './command';
 import path from 'path';
 import * as dotenv from 'dotenv'
-dotenv.config({path: './src/.env'});
+import { ProcessMode } from './types';
+dotenv.config({ path: './src/.env' });
 
 (async function () {
     try {
+        const args: Array<ProcessMode | string> = process.argv
+            .slice(2)
+            .filter((v) => v.startsWith('--'))
+            .map((v) => v.replace('--', ''));
+        if (args.some((v) => v === 'dev')) process.env.NODE_ENV = 'dev';
+        else process.env.NODE_ENV = 'production';
+
         globalThis.nodeCache = new NodeCache({ useClones: false, stdTTL: 43200 });
         globalThis.client = await Client.connect();
         globalThis.config = config;
