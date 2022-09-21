@@ -31,7 +31,6 @@ export async function eventHandler(client: Client) {
         // TODO: Remove isGroup validator
         if (!utilities._.has(database.storage.chats, mess.from!) && mess.validator.isGroup) database.storage.chats[mess.from!] = {};
         if (!database.storage.chatsId.includes(mess.from)) database.storage.chatsId.push(mess.from);
-
         return Promise.all([client.socket.readMessages([mess.key]), command.emit(mess)]);
     });
 
