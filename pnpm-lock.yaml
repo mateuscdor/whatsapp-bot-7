@@ -10,17 +10,18 @@ specifiers:
   fastest-levenshtein: ^1.0.16
   file-type: 16.5.4
   form-data: ^4.0.0
-  link-preview-js: ^2.1.13
+  link-preview-js: ^2.1.19
   lodash: ^4.17.21
   node-cache: ^5.1.2
-  pino: ^8.5.0
+  pino: ^8.6.0
   qrcode-terminal: ^0.12.0
   ts-node: ^10.9.1
   typescript: ^4.8.3
 
 dependencies:
-  '@adiwajshing/baileys': github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b_nvpv5kbty5jk6strl4ranx5vsq
+  '@adiwajshing/baileys': github.com/adiwajshing/baileys/6735263696472181de7d41b0b1f674c8d60451c5_nvpv5kbty5jk6strl4ranx5vsq
   '@hapi/boom': 10.0.0
+  '@types/node': 18.7.18
   axios: 0.26.1
   dotenv: 16.0.2
   fastest-levenshtein: 1.0.16
@@ -29,12 +30,11 @@ dependencies:
   link-preview-js: 2.1.19
   lodash: 4.17.21
   node-cache: 5.1.2
-  pino: 8.5.0
+  pino: 8.6.0
   qrcode-terminal: 0.12.0
 
 devDependencies:
   '@types/lodash': 4.14.185
-  '@types/node': 18.7.18
   ts-node: 10.9.1_bidgzm5cq2du6gnjtweqqjrrn4
   typescript: 4.8.3
 
@@ -579,8 +579,8 @@ packages:
       thread-stream: 0.15.2
     dev: false
 
-  /pino/8.5.0:
-    resolution: {integrity: sha512-PuD6sOti8Y+p9zRoNB5dibmfjfM/OU2tEtJFICxw5ulXi1d0qnq/Rt3CsR6aBEAOeyCXP+ZUfiNWW+tt55pNzg==}
+  /pino/8.6.0:
+    resolution: {integrity: sha512-gCEOs6XpgiM8mSFjiLXQejDJ1PZww8AUmHowQ16QpqpXQDIm3mFwn/29+Y6CJxd6i+x3uXduuerjq+IqWoABbA==}
     hasBin: true
     dependencies:
       atomic-sleep: 1.0.0
@@ -853,9 +853,9 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b_nvpv5kbty5jk6strl4ranx5vsq:
-    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/f8fd5ec0080e9f53288b96b0073212e53a40f57b}
-    id: github.com/adiwajshing/baileys/f8fd5ec0080e9f53288b96b0073212e53a40f57b
+  github.com/adiwajshing/baileys/6735263696472181de7d41b0b1f674c8d60451c5_nvpv5kbty5jk6strl4ranx5vsq:
+    resolution: {tarball: https://codeload.github.com/adiwajshing/baileys/tar.gz/6735263696472181de7d41b0b1f674c8d60451c5}
+    id: github.com/adiwajshing/baileys/6735263696472181de7d41b0b1f674c8d60451c5
     name: '@adiwajshing/baileys'
     version: 5.0.0
     prepare: true
