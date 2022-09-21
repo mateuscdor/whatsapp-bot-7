@@ -12,7 +12,7 @@ command.on(
             const evaluate = await eval(`;(async () => {${parse} })()`).catch((err: unknown) => {
                 client.reply(mess, err as string);
             });
-            return client.reply(mess, evaluate);
+            return client.reply(mess, `${evaluate}`);
         } catch (err) {
             return client.reply(mess, err as string);
         }
