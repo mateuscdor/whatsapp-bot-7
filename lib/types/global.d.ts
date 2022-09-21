@@ -5,6 +5,8 @@ import Database from '../database';
 import * as Utilities from '../utilities'
 import commandHandler from '../command';
 
+export type ProcessMode = 'dev' | 'production';
+
 declare global {
     interface String {
         normalizeJid: () => string;
